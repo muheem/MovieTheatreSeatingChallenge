@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6fd2c96-d966-4177-af75-425ee91e3017" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/AllocateSeating.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieSeats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieSeats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,5 +55,16 @@
       <updated>1677175839222</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

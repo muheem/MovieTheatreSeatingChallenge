@@ -1,16 +1,18 @@
 package com.techrunners;
 
 import org.junit.jupiter.api.Test;
+
 //import org.junit.jupiter.params.ParameterizedTest;
 //import org.junit.jupiter.params.provider.CsvFileSource;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import java.awt.Point;
+import java.security.InvalidParameterException;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AllocateSeatingTest {
 
     @Test
     public void CheckAllocatingFirstSeats() {
-        MovieSeats seating = new MovieSeats();
+        MovieScreen seating = new MovieScreen();
         Ticket ticket =  seating.AllocateSeating(3);
         assertEquals( "A1", ticket.seating[0]);
         assertEquals( "A2", ticket.seating[1]);
@@ -20,7 +22,7 @@ public class AllocateSeatingTest {
 
     @Test
     public void CheckAllocatingNextNextThreeSeats() {
-        MovieSeats seating = new MovieSeats();
+        MovieScreen seating = new MovieScreen();
         Ticket ticket =  seating.AllocateSeating(3);
         Ticket ticket2 =  seating.AllocateSeating(3);
         assertEquals( "A4", ticket2.seating[0]);
@@ -31,7 +33,7 @@ public class AllocateSeatingTest {
 
     @Test
     public void CheckAllocatingAfterAllFilled() {
-        MovieSeats seating = new MovieSeats();
+        MovieScreen seating = new MovieScreen();
         Ticket ticket =  seating.AllocateSeating(3);
         Ticket ticket2 =  seating.AllocateSeating(3);
         Ticket ticket3 =  seating.AllocateSeating(3);
@@ -44,4 +46,22 @@ public class AllocateSeatingTest {
         assertEquals( false, ticket6.complete());
     }
 
+
+    @Test
+    public void CheckInvalidInputForAllocateSeating() {
+        MovieScreen seating = new MovieScreen();
+        Ticket ticket;
+
+        // Test a seat number too large.
+        Exception exception = assertThrows(InvalidParameterException.class, () -> {
+            seating.AllocateSeating(4);
+        });
+        assertTrue(exception.getMessage().contains("Seating amount: 4 greater than 3"));
+
+        // Test a seat number too small.
+        exception = assertThrows(InvalidParameterException.class, () -> {
+            seating.AllocateSeating(0);
+        });
+        assertTrue(exception.getMessage().contains("Invalid seating amount: 0 specified."));
+    }
 }

@@ -3,7 +3,7 @@ package com.techrunners;
 import java.security.InvalidParameterException;
 
 
-public class MovieSeats {
+public class MovieScreen {
 
     enum Occupied { EMPTY, FILLED };
 
@@ -24,9 +24,9 @@ public class MovieSeats {
         boolean allocated = false;
 
         if ( n <=  0)
-            throw new InvalidParameterException("Invalid amout: " + n + " specified/");
+            throw new InvalidParameterException("Invalid seating amount: " + n + " specified.");
         if ( n > MAX_SEATS_IN_ONE_ALLOCATION)
-            throw new InvalidParameterException("amount: " + n + " greater than " + MAX_SEATS_IN_ONE_ALLOCATION);
+            throw new InvalidParameterException("Seating amount: " + n + " greater than " + MAX_SEATS_IN_ONE_ALLOCATION);
 
         for (int i = next_free; i < TOTAL_SEATS ; i++) {
             if (seats[i] == Occupied.FILLED)
