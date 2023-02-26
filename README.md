@@ -16,6 +16,8 @@ There are three classes :
 
 A client can allocate tickets until the theatre is full. In this scenario there are 15 seats. In the test code function CheckFillingUpAllSeatingInAllocateSeating, the seating is filled up with random orders (generating a ticket) of between 1-3 seat.
 
+This test code function, CheckFillingUpAllSeatingInAllocateSeating, provides an example of how to use the code.
+
 #### Issues.
 1. If the input is greater or lesser than the allowed the function AllocateSeating will throw an exception. Also if there are not enough seats to complete and order. The API is using exceptions as part of the contract with the user.
 2. The AllocateSeating function is basic. In future Customer may want to choose seats. Or seats are (automatically) ket together when possible.
