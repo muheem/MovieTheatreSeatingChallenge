@@ -3,16 +3,12 @@ package com.techrunners;
 import java.security.InvalidParameterException;
 
 public class MovieScreen {
-
-    enum Occupied { EMPTY, FILLED };
-
     String[] seatNumber = new String[TOTAL_SEATS];
+    static final String FILLED = "XX";
     static final int MAX_SEATS_IN_ONE_ALLOCATION = 3;
     static  final int SEATS_IN_A_ROWS = 5;
     public static final int TOTAL_SEATS = 15; // may not be a constant
     int remaining_seats = TOTAL_SEATS;
-
-    Occupied[] seats = new Occupied[TOTAL_SEATS];
     int next_free = 0;
 
     MovieScreen(){
@@ -29,13 +25,14 @@ public class MovieScreen {
         if (remaining_seats == 0)
             throw new MovieScreenSoldOutException("Cannot Allocate Seats. SOLD OUT!");
         if (remaining_seats < n)
-                throw new MovieScreenSoldOutException("Cannot Allocate Seats. Only " + (n - ticket.unfilled()) + " seats available");
+            throw new MovieScreenSoldOutException("Cannot Allocate Seats. Only " + (n - ticket.unfilled()) + " seats available");
 
         for (int i = next_free; i < TOTAL_SEATS ; i++) {
-            if (seats[i] == Occupied.FILLED)
+            String seat = seatNumber[i];
+            if (seat.equals(FILLED))
                 continue;
-            seats[i] = Occupied.FILLED;
             ticket.SetSeatNumber(seatNumber[i]);
+            seatNumber[i] = FILLED;
             remaining_seats--;
             next_free++;
             if (ticket.complete())
@@ -44,7 +41,7 @@ public class MovieScreen {
         return ticket;
     }
 
-    public void  GenerateSeatNumbers() {
+    private void  GenerateSeatNumbers() {
         char row_letter;
         int seat_number;
 

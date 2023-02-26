@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c6fd2c96-d966-4177-af75-425ee91e3017" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +71,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java</url>
-          <line>127</line>
+          <line>128</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
