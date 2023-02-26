@@ -12,7 +12,7 @@ There are three classes :
 - Ticket class, the Customer allocation of between 1-3 seats, with the seat numbers.
 - Customer class. Contains record of all ticket allocations.
 
-![Screenshot 2023-02-26 at 21.33.25.png](..%2F..%2F..%2FDesktop%2FScreenshot%202023-02-26%20at%2021.33.25.png)
+![img.png](img.png)
 
 A client can allocate tickets until the theatre is full. In this scenario there are 15 seats. In the test code function CheckFillingUpAllSeatingInAllocateSeating, the seating is filled up with random orders (generating a ticket) of between 1-3 seat.
 
