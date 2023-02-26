@@ -16,7 +16,7 @@ public class MovieScreen {
     Ticket ticket;
 
 
-    public Ticket AllocateSeating(int n) throws MovieScreenSoldOutException {
+    public Ticket AllocateSeating(Customer customer, int n) throws MovieScreenSoldOutException {
 
         if ( n <=  0)
             throw new InvalidParameterException("Invalid seating amount: " + n + " specified.");
@@ -28,7 +28,7 @@ public class MovieScreen {
                 throw new MovieScreenSoldOutException("Cannot Allocate Seats. Only " + (n - ticket.unfilled()) + " seats available");
 
         ticket = null; // delete for now.
-        ticket = new Ticket(n);
+        ticket = new Ticket(customer.id(), n);
 
         boolean allocated = false;
 

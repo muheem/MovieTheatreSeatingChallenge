@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6fd2c96-d966-4177-af75-425ee91e3017" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreenSoldOutException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/Ticket.java" afterDir="false" />
@@ -73,33 +73,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java</url>
-          <line>74</line>
+          <line>85</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

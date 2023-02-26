@@ -6,12 +6,12 @@ public class Ticket {
     private int seats_filled = 0;
 
     static  final int SEATS_IN_A_ROWS = 5;
+    private int customerId = 0;
 
-    int customer_id = 0; // TO BE USED
-
-    Ticket(int seats) {
+    Ticket(int customerId, int seats) {
         this.total_needed = seats;
         this.seating = new String[seats];
+        this.customerId = customerId;
     }
 
     public void  SetSeatNumber(int index) {
