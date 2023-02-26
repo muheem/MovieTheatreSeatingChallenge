@@ -93,6 +93,7 @@ public class AllocateSeatingTest {
     }
 
 
+
     @Test
     public void CheckFillingUpAllSeatingInAllocateSeating() {
         MovieScreen seating = new MovieScreen();
@@ -112,4 +113,22 @@ public class AllocateSeatingTest {
 
         assertTrue(exception.getMessage().contains("Cannot Allocate Seats."));
     }
+    @Test
+    public void CheckCustomerClassTicketStorage() {
+        MovieScreen seating = new MovieScreen();
+        String name = "Joe Bloggs";
+        Customer c = new Customer(name);
+        try {
+            c.setTicket(seating.AllocateSeating(c, 3));
+        } catch (MovieScreenSoldOutException e) {
+            System.out.print( "Unexpected exception" + e);
+        };
+
+        // Interrogate Customer
+        Ticket t = c.getLatestTicket();
+        assertEquals( "A1", t.seating[0]);
+        assertEquals( "A2", t.seating[1]);
+        assertEquals( "A3", t.seating[2]);
+    }
 }
+

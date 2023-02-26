@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6fd2c96-d966-4177-af75-425ee91e3017" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/MovieScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/techrunners/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/techrunners/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java" afterDir="false" />
@@ -73,8 +73,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/techrunners/AllocateSeatingTest.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="4" />
+          <line>127</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,15 +1,25 @@
 package com.techrunners;
 
-import java.util.Stack;
+import java.util.ArrayList;
+
 public class Customer {
+    public String name;
+    private int customerId = 0;
+    //public Stack<Ticket> tickets;
+    ArrayList<Ticket> tickets = new ArrayList<>();
+
     Customer(String name) {
         this.name = name;
-        customerID = customerID+1;
+        customerId = customerId+1;
     }
     public int id() {
-        return customerID;
+        return customerId;
     }
-    public String name;
-    private int customerID = 0;
-    public Stack<Ticket> tickets;
+    void setTicket(Ticket ticket) {
+        tickets.add(ticket);
+    }
+    Ticket getLatestTicket() {
+        return tickets.get(tickets.size() - 1);
+    }
+
 }
