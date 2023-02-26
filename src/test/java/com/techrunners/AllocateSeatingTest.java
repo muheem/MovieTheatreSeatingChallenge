@@ -7,13 +7,20 @@ import org.junit.jupiter.api.Test;
 import java.security.InvalidParameterException;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.Random;
+import static java.lang.Math.*;
 
 public class AllocateSeatingTest {
 
     @Test
     public void CheckAllocatingFirstSeats() {
         MovieScreen seating = new MovieScreen();
-        Ticket ticket =  seating.AllocateSeating(3);
+        Ticket ticket = null;
+        try {
+            ticket = seating.AllocateSeating(3);
+        } catch (MovieScreenSoldOutException e) {
+            System.out.print( "Unexpected exception" + e);
+        };
         assertEquals( "A1", ticket.seating[0]);
         assertEquals( "A2", ticket.seating[1]);
         assertEquals( "A3", ticket.seating[2]);
@@ -23,8 +30,14 @@ public class AllocateSeatingTest {
     @Test
     public void CheckAllocatingNextNextThreeSeats() {
         MovieScreen seating = new MovieScreen();
-        Ticket ticket =  seating.AllocateSeating(3);
-        Ticket ticket2 =  seating.AllocateSeating(3);
+        Ticket ticket=null, ticket2=null;
+        try {
+            ticket =  seating.AllocateSeating(3);
+            ticket2 =  seating.AllocateSeating(3);
+        } catch (MovieScreenSoldOutException e) {
+            System.out.print( "Unexpected exception" + e);
+        };
+
         assertEquals( "A4", ticket2.seating[0]);
         assertEquals( "A5", ticket2.seating[1]);
         assertEquals( "B1", ticket2.seating[2]);
@@ -34,16 +47,19 @@ public class AllocateSeatingTest {
     @Test
     public void CheckAllocatingAfterAllFilled() {
         MovieScreen seating = new MovieScreen();
-        Ticket ticket =  seating.AllocateSeating(3);
-        Ticket ticket2 =  seating.AllocateSeating(3);
-        Ticket ticket3 =  seating.AllocateSeating(3);
-        Ticket ticket4 =  seating.AllocateSeating(3);
-        Ticket ticket5 =  seating.AllocateSeating(3);
-        Ticket ticket6 =  seating.AllocateSeating(3);
-        assertEquals( null, ticket6.seating[0]);
-        assertEquals( null, ticket6.seating[1]);
-        assertEquals( null, ticket6.seating[2]);
-        assertEquals( false, ticket6.complete());
+        Ticket ticket=null, ticket2=null, ticket3=null, ticket4=null, ticket5=null, ticket6=null;
+        try {
+            ticket =  seating.AllocateSeating(3);
+            ticket2 =  seating.AllocateSeating(3);
+            ticket3 =  seating.AllocateSeating(3);
+            ticket4 =  seating.AllocateSeating(3);
+            ticket5 =  seating.AllocateSeating(3);
+            Exception exception = assertThrows(MovieScreenSoldOutException.class, () -> {
+                seating.AllocateSeating(3);
+            });
+        } catch (MovieScreenSoldOutException e) {
+            assertTrue(e.getMessage().contains("SOLD OUT! No more seats available."));
+        };
     }
 
 
@@ -63,5 +79,23 @@ public class AllocateSeatingTest {
             seating.AllocateSeating(0);
         });
         assertTrue(exception.getMessage().contains("Invalid seating amount: 0 specified."));
+    }
+
+
+    @Test
+    public void CheckFillingUpAllSeatingInAllocateSeating() {
+        MovieScreen seating = new MovieScreen();
+        Ticket ticket;
+
+        Random rand = new Random();
+        int upperbound = 3;
+
+        Exception exception = assertThrows(MovieScreenSoldOutException.class, () -> {
+            for (int i = 0; i < seating.TOTAL_SEATS; i++) {
+                seating.AllocateSeating(rand.nextInt(upperbound)+1);
+            }
+        });
+        
+        assertTrue(exception.getMessage().contains("Cannot Allocate Seats."));
     }
 }

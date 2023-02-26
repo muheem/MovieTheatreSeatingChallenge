@@ -27,4 +27,8 @@ public class Ticket {
     public boolean complete() {
         return seats_filled == total_needed;
     }
+
+    public int unfilled() {
+        return total_needed - seats_filled;
+    }
 }
